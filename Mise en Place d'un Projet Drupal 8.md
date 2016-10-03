@@ -18,17 +18,22 @@ Pour éviter les problème de versionning et de déployment, les fichiers de la 
 
 ### Configuration locale
 Le fichier `settings.php`doit être commun et versionné. La configuration locale doit être déporté dans un fichier `settings.local.php` en décommentant le snipet de code suivant en fin du fichier `settings.php`
+
 ```
- if (file_exists(__DIR__ . '/settings.local.php')) {
+if (file_exists(__DIR__ . '/settings.local.php')) {
    include __DIR__ . '/settings.local.php';
- }
+ } 
 ```
+
 ### Fichier de configuration 
 Les fichier YAML de la configuration drupal doivent être déporté à l'exterrieur du docroot drupal dans un dossier config :
-```$config_directories = array(
+
+```
+$config_directories = array(
   CONFIG_SYNC_DIRECTORY => '../config/sync',
 );
 ```
+
 
 
 ## Versionning 
